@@ -11,7 +11,7 @@ class Hypercode {
     this.apiKey = apiKey;
   }
 
-  async init(apiKey: string): Promise<void> {
+  init(apiKey: string): void {
     this.apiKey = apiKey;
   }
 
@@ -39,26 +39,27 @@ class Hypercode {
     }
   }
 
-  async boolean(query: string, contextId?: string): Promise<boolean> {
+  async boolean(query: string, contextId?: string): Promise<{ data: boolean }> {
     return await this.makeRequest("boolean", query, contextId);
   }
 
-  async integer(query: string, contextId?: string): Promise<number> {
+  async integer(query: string, contextId?: string): Promise<{ data: number }> {
     return await this.makeRequest("integer", query, contextId);
   }
 
-  async string(query: string, contextId?: string): Promise<string> {
+  async string(query: string, contextId?: string): Promise<{ data: string }> {
     return await this.makeRequest("string", query, contextId);
   }
 
-  async datetime(query: string, contextId?: string): Promise<string> {
+  async datetime(query: string, contextId?: string): Promise<{ data: string }> {
     return await this.makeRequest("datetime", query, contextId);
   }
 
-  async float(query: string, contextId?: string): Promise<number> {
+  async float(query: string, contextId?: string): Promise<{ data: number }> {
     return await this.makeRequest("float", query, contextId);
   }
 }
 
+// Create an instance of Hypercode with the API key
 const hyper = new Hypercode(process.env.HYPER_API_KEY || "");
 export default hyper;

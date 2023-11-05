@@ -1,17 +1,12 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = __importDefault(require("axios"));
-const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
+import axios from "axios";
+import dotenv from "dotenv";
+dotenv.config();
 class Hypercode {
     constructor(apiKey) {
         this.apiUrl = "https://api.gethyper.ai/v1/types";
         this.apiKey = apiKey;
     }
-    async init(apiKey) {
+    init(apiKey) {
         this.apiKey = apiKey;
     }
     async makeRequest(endpoint, queryOrContent, contextId) {
@@ -20,7 +15,7 @@ class Hypercode {
             ? { query: queryOrContent, context_id: contextId }
             : { content: queryOrContent };
         try {
-            const response = await axios_1.default.post(url, payload, {
+            const response = await axios.post(url, payload, {
                 headers: {
                     Authorization: `Bearer ${this.apiKey}`,
                     "Content-Type": "application/json",
@@ -49,5 +44,6 @@ class Hypercode {
         return await this.makeRequest("float", query, contextId);
     }
 }
+// Create an instance of Hypercode with the API key
 const hyper = new Hypercode(process.env.HYPER_API_KEY || "");
-exports.default = hyper;
+export default hyper;
