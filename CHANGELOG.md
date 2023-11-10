@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/gethyperai/hypercode/compare/v1.0.2...v1.1.0) (2023-11-10)
+
+
+### Features
+
+* **version:** bump version ([7752fca](https://github.com/gethyperai/hypercode/commit/7752fca9c134b98bb0545b10bb562ef25e76bf29))
+
 ## [1.0.2](https://github.com/gethyperai/hypercode/compare/v1.0.1...v1.0.2) (2023-11-10)
 
 
