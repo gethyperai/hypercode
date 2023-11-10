@@ -68,7 +68,7 @@ describe('Hypercode API methods', () => {
   });
 
   test('string method should return the correct string for an identification query with contextId', async () => {
-    const contextId = 'context-abc';
+    const contextId = 'context-123';
     (axios.post as jest.Mock).mockResolvedValue({ data: 'Elon Musk' });
     const result = await hyper.string('Who is the CEO of SpaceX?', contextId);
     expect(typeof result).toBe('string');
