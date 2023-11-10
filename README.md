@@ -5,7 +5,7 @@ Hypercode is a friendly npm package that makes it easy to get live, structured L
 With Hypercode, you can easily query language models and receive responses in useful formats like integers, booleans, strings, and dates:
 
 ```javascript
-const isEarthFlat = await hyper.boolean("Is the earth flat?");
+const isEarthFlat = await hyper.boolean('Is the earth flat?');
 
 console.log(isEarthFlat); // false
 ```
@@ -13,8 +13,8 @@ console.log(isEarthFlat); // false
 You can also pass information along with your queries in the form of `context`. Context represents bundles of live data with relevance to the query, ensuring the LLM his given all the information necessary to product an accurate response. You can build context objects in the <a href="https://app.gethyper.ai" target="_blank">Hyper app</a>, then use them in Hypercode:
 
 ```javascript
-const productLaunchDate = await hyper.datetime("When is the product launch?", {
-  contextId: "product-roadmap-context-id",
+const productLaunchDate = await hyper.datetime('When is the product launch?', {
+  contextId: 'product-roadmap-context-id',
 });
 
 console.log(productLaunchDate); // "2024-07-31T0:00:00Z"
@@ -26,24 +26,24 @@ The combination of structure and context in Hypercode is a powerful tool for add
 
 ```javascript
 async function prepareEmailCampaign() {
-  const todayIsHoliday = await hyper.boolean("Is today a holiday?", {
-    contextId: "company-holidays-context-id",
+  const todayIsHoliday = await hyper.boolean('Is today a holiday?', {
+    contextId: 'company-holidays-context-id',
   });
   const emailSubject = await hyper.string(
     todayIsHoliday
-      ? "Generate a catchy subject for a post-holiday campaign"
-      : "Generate a catchy subject for a regular workday campaign",
+      ? 'Generate a catchy subject for a post-holiday campaign'
+      : 'Generate a catchy subject for a regular workday campaign',
     {
-      contextId: "spring-promo-context-id",
-    }
+      contextId: 'spring-promo-context-id',
+    },
   );
 
   return {
-    campaign: "Spring Promo",
-    recipientList: "/lists/spring-campaign.csv",
-    emailTemplate: "templates/spring-promo.html",
+    campaign: 'Spring Promo',
+    recipientList: '/lists/spring-campaign.csv',
+    emailTemplate: 'templates/spring-promo.html',
     emailSubject,
-    sendDate: todayIsHoliday ? "next business day" : "today",
+    sendDate: todayIsHoliday ? 'next business day' : 'today',
   };
 }
 
@@ -77,10 +77,10 @@ Make sure to replace `your_api_key_here` with your actual Hyper API key.
 Alternatively, you can set the key yourself by calling the `hyper.init` method:
 
 ```javascript
-require("dotenv").config();
-const hyper = require("hypercode");
+require('dotenv').config();
+const hyper = require('hypercode');
 
-hyper.init("API_KEY_HERE");
+hyper.init('API_KEY_HERE');
 
 // Continue with other function calls
 ```
@@ -90,7 +90,7 @@ hyper.init("API_KEY_HERE");
 Import Hypercode in your JavaScript or TypeScript file.
 
 ```javascript
-const hyper = require("hypercode");
+const hyper = require('hypercode');
 ```
 
 ### Step 4: Start Querying
@@ -104,15 +104,15 @@ Hypercode provides a variety of structured query types, allowing you to seamless
 - **boolean**: Get a true or false answer.
 
   ```javascript
-  const canCatsSeeInTheDark = await hyper.boolean("Can cats see in the dark?");
+  const canCatsSeeInTheDark = await hyper.boolean('Can cats see in the dark?');
   console.log(canCatsSeeInTheDark); // true
   ```
 
 - **integer**: Get an integer answer.
   ```javascript
   const numberOfPatentsFiled = await hyper.integer(
-    "How many patents has the company filed since its inception?",
-    { contextId: "company-history-context-id" }
+    'How many patents has the company filed since its inception?',
+    { contextId: 'company-history-context-id' },
   );
   console.log(numberOfPatentsFiled); // 50
   ```
@@ -126,7 +126,7 @@ Hypercode provides a variety of structured query types, allowing you to seamless
   ```javascript
   const averageRevenueGrowth = await hyper.float(
     "What has been the company's average revenue growth rate over the last five years?",
-    { contextId: "financial-report-context-id" }
+    { contextId: 'financial-report-context-id' },
   );
   console.log(averageRevenueGrowth); // 4.7
   ```
@@ -134,7 +134,7 @@ Hypercode provides a variety of structured query types, allowing you to seamless
 - **datetime**: Get a date and time as the answer.
   ```javascript
   const moonLandingDate = await hyper.datetime(
-    "What is the date of the Apollo 11 moon landing?"
+    'What is the date of the Apollo 11 moon landing?',
   );
   console.log(moonLandingDate); // "1969-07-20T20:17:00Z"
   ```
