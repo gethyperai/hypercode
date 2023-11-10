@@ -10,7 +10,6 @@ export default defineConfig({
   target: "esnext",
   format: ["cjs", "esm"],
   platform: "node",
-  dts: true,
   outExtension({ format }) {
     return {
       js: `.${format}.js`,
