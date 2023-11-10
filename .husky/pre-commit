@@ -6,3 +6,4 @@ if [ -t 2 ]; then
 fi
 
 npm run test
+npm run lint-staged
