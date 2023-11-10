@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/gethyperai/hypercode/compare/v1.1.0...v1.1.1) (2023-11-10)
+
+
+### Bug Fixes
+
+* **ci:** add permissions ([86ae312](https://github.com/gethyperai/hypercode/commit/86ae312c547605baae63df70d76e75a0016e0ad0))
+
 # [1.1.0](https://github.com/gethyperai/hypercode/compare/v1.0.2...v1.1.0) (2023-11-10)
 
 
