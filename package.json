@@ -10,8 +10,9 @@
   "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup",
     "test": "jest",
+    "ts-types": " tsc --emitDeclarationOnly --outDir dist",
+    "build": "rm -rf dist && tsup && npm run ts-types",
     "start": "node dist/index.js"
   },
   "keywords": [
