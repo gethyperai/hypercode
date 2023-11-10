@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/gethyperai/hypercode/compare/v1.0.0...v1.0.1) (2023-11-10)
+
+
+### Bug Fixes
+
+* **npm:** registry issues ([70d1b9f](https://github.com/gethyperai/hypercode/commit/70d1b9fb8615cc8b65b6a7b20697a96cdf4ac925))
+
 # 1.0.0 (2023-11-10)
 
 
