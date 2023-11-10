@@ -20,6 +20,7 @@
     "pretty": "prettier --check .",
     "pretty:fix": "prettier --write .",
     "lint-staged": "lint-staged",
+    "commitlint": "commitlint --edit",
     "commit": "cz"
   },
   "lint-staged": {
@@ -42,6 +43,8 @@
     "dotenv": "^16.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.4.0",
+    "@commitlint/config-conventional": "^18.4.0",
     "@types/jest": "^29.5.7",
     "@types/node": "^20.9.0",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
