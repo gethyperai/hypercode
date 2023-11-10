@@ -10,7 +10,7 @@ const isEarthFlat = await hyper.boolean('Is the earth flat?');
 console.log(isEarthFlat); // false
 ```
 
-You can also pass information along with your queries in the form of `context`. Context represents bundles of live data with relevance to the query, ensuring the LLM his given all the information necessary to product an accurate response. You can build context objects in the <a href="https://app.gethyper.ai" target="_blank">Hyper app</a>, then use them in Hypercode:
+You can also pass information along with your queries in the form of `context`. Context represents bundles of live data with relevance to the query, ensuring the LLM his given all the information necessary to product an accurate response. You can build context objects in the [Hyper app](https://app.gethyper.ai), then use them in Hypercode:
 
 ```javascript
 const productLaunchDate = await hyper.datetime('When is the product launch?', {
@@ -64,11 +64,11 @@ npm install hypercode
 
 ### Step 2: Set your Hyper API Key
 
-> **_NOTE:_** You can generate an API key from the <a href="https://app.gethyper.ai/settings/api-keys" target="_blank">API Key Settings</a> page in the Hyper app.
+> **_NOTE:_** You can generate an API key from the [API Key Settings](https://app.gethyper.ai/settings/api-keys) page in the Hyper app.
 
 In your `.env` file, set your Hyper API Key:
 
-```
+```bash
 HYPER_API_KEY=your_api_key_here
 ```
 
@@ -109,6 +109,7 @@ Hypercode provides a variety of structured query types, allowing you to seamless
   ```
 
 - **integer**: Get an integer answer.
+
   ```javascript
   const numberOfPatentsFiled = await hyper.integer(
     'How many patents has the company filed since its inception?',
@@ -116,11 +117,14 @@ Hypercode provides a variety of structured query types, allowing you to seamless
   );
   console.log(numberOfPatentsFiled); // 50
   ```
+
 - **string**: Get a simple string answer.
+
   ```javascript
   const color = hyper.string("What's the color of the sky?");
   console.log(color); // "blue"
   ```
+
 - **float**: Get a floating-point number answer.
 
   ```javascript
@@ -132,6 +136,7 @@ Hypercode provides a variety of structured query types, allowing you to seamless
   ```
 
 - **datetime**: Get a date and time as the answer.
+
   ```javascript
   const moonLandingDate = await hyper.datetime(
     'What is the date of the Apollo 11 moon landing?',
