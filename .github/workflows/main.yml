@@ -37,8 +37,11 @@ jobs:
     needs: [check-and-build]
 
     permissions:
+      actions: write
       packages: write
       contents: write
+      issues: write
+      pull-requests: write
 
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
