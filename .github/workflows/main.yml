@@ -36,9 +36,13 @@ jobs:
     if: ${{ github.ref == 'refs/heads/main' }}
     needs: [check-and-build]
 
+    permissions:
+      packages: write
+      contents: write
+
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout 🛎️
