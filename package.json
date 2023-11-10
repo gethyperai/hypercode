@@ -2,14 +2,15 @@
   "name": "hypercode",
   "version": "0.0.8",
   "description": "Hypercode is a friendly npm package that makes it easy to get live, structured LLM responses in your application.",
-  "files": [
-    "dist"
-  ],
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "prepare": "husky install",
     "watch": "tsc --watch --noEmit",
     "test": "jest",
     "ts-types": " tsc --emitDeclarationOnly --outDir dist",
@@ -43,7 +44,8 @@
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
     "tsup": "^7.2.0",
-    "typescript": "^5.1.3"
+    "typescript": "^5.1.3",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "axios": "^1.4.0",
