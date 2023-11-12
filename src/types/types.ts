@@ -12,6 +12,10 @@ type allowedTypes =
   | 'boolean_array'
   | 'datetime_array';
 
+type MethodParamsOptions = {
+  contextId: string;
+};
+
 export class Types {
   constructor(private readonly hyper: Hyper) {}
 
@@ -40,51 +44,51 @@ export class Types {
     return res;
   }
 
-  async string(query: string, contextId?: string) {
+  async string(query: string, options?: MethodParamsOptions) {
     const data = await this.makeRequest<string>({
       endpointType: 'string',
       query,
-      contextId,
+      contextId: options?.contextId,
     });
 
     return data;
   }
 
-  async integer(query: string, contextId?: string) {
+  async integer(query: string, options?: MethodParamsOptions) {
     const data = await this.makeRequest<number>({
       endpointType: 'integer',
       query,
-      contextId,
+      contextId: options?.contextId,
     });
 
     return data;
   }
 
-  async float(query: string, contextId?: string) {
+  async float(query: string, options?: MethodParamsOptions) {
     const data = await this.makeRequest<number>({
       endpointType: 'float',
       query,
-      contextId,
+      contextId: options?.contextId,
     });
 
     return data;
   }
 
-  async boolean(query: string, contextId?: string) {
+  async boolean(query: string, options?: MethodParamsOptions) {
     const data = await this.makeRequest<boolean>({
       endpointType: 'boolean',
       query,
-      contextId,
+      contextId: options?.contextId,
     });
 
     return data;
   }
 
-  async datetime(query: string, contextId?: string) {
+  async datetime(query: string, options?: MethodParamsOptions) {
     const data = await this.makeRequest<string>({
       endpointType: 'datetime',
       query,
-      contextId,
+      contextId: options?.contextId,
     });
 
     return data;
