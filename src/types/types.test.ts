@@ -27,10 +27,9 @@ describe('Hypercode Types API methods', () => {
         status: 200,
       });
 
-      const result = await hyper.types.string(
-        'Who is the CEO of SpaceX?',
+      const result = await hyper.types.string('Who is the CEO of SpaceX?', {
         contextId,
-      );
+      });
 
       expect(typeof result.data).toBe('string');
       expect(result.data).toBe('Elon Musk');
@@ -72,7 +71,7 @@ describe('Hypercode Types API methods', () => {
 
       const result = await hyper.types.string(
         'How many planets are in the Solar System?',
-        contextId,
+        { contextId },
       );
 
       expect(typeof result.data).toBe('number');
@@ -118,7 +117,7 @@ describe('Hypercode Types API methods', () => {
 
       const result = await hyper.types.float(
         'How many billion years old is the universe?',
-        contextId,
+        { contextId },
       );
 
       expect(typeof result.data).toBe('number');
@@ -157,10 +156,9 @@ describe('Hypercode Types API methods', () => {
         status: 200,
       });
 
-      const result = await hyper.types.boolean(
-        'Can cats see in the dark?',
+      const result = await hyper.types.boolean('Can cats see in the dark?', {
         contextId,
-      );
+      });
 
       expect(typeof result.data).toBe('boolean');
       expect(result.data).toBe(true);
@@ -204,7 +202,7 @@ describe('Hypercode Types API methods', () => {
 
       const { data } = await hyper.types.datetime(
         'What is the date of the Apollo 11 moon landing?',
-        contextId,
+        { contextId },
       );
 
       expect(typeof data).toBe('string');
