@@ -19,5 +19,21 @@ describe('Hypercode Types API methods', () => {
       expect(typeof result.data).toBe('string');
       expect(result.data).toBe('Elon Musk');
     });
+
+    it('should return the correct string for an identification query with contextId', async () => {
+      const contextId = 'context-123';
+
+      fetchMock.mockOnce(JSON.stringify({ data: 'Elon Musk' }), {
+        status: 200,
+      });
+
+      const result = await hyper.types.string(
+        'Who is the CEO of SpaceX?',
+        contextId,
+      );
+
+      expect(typeof result.data).toBe('string');
+      expect(result.data).toBe('Elon Musk');
+    });
   });
 });
