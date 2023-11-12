@@ -1,16 +1,13 @@
-module.exports = {
-  preset: 'ts-jest/presets/default-esm', // Use the ESM preset for ts-jest
-  globals: {
-    'ts-jest': {
-      useESM: true,
-    },
-  },
-  moduleNameMapper: {
-    '^(\\.{1,2}/.*)\\.js$': '$1',
-  },
-  testEnvironment: 'node', // Specify the test environment
-  testMatch: ['**/*.test.ts'], // Match test files
-  extensionsToTreatAsEsm: ['.ts'], // Treat these extensions as ESM
-  // If you have a custom setup file, you need to use the full filename including extension
-  transform: {}, // ts-jest will be used for ts/tsx files automatically
+import { JestConfigWithTsJest } from 'ts-jest/';
+
+const config: JestConfigWithTsJest = {
+  preset: 'ts-jest',
+  clearMocks: true,
+  restoreMocks: true,
+  verbose: true,
+  testEnvironment: 'node',
+  setupFiles: ['./jest.setup.ts'],
+  prettierPath: '<rootDir>/node_modules/prettier',
 };
+
+export default config;
