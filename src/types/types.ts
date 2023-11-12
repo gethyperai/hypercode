@@ -49,4 +49,44 @@ export class Types {
 
     return data;
   }
+
+  async integer(query: string, contextId?: string) {
+    const data = await this.makeRequest<number>({
+      endpointType: 'integer',
+      query,
+      contextId,
+    });
+
+    return data;
+  }
+
+  async float(query: string, contextId?: string) {
+    const data = await this.makeRequest<number>({
+      endpointType: 'float',
+      query,
+      contextId,
+    });
+
+    return data;
+  }
+
+  async boolean(query: string, contextId?: string) {
+    const data = await this.makeRequest<boolean>({
+      endpointType: 'boolean',
+      query,
+      contextId,
+    });
+
+    return data;
+  }
+
+  async datetime(query: string, contextId?: string) {
+    const data = await this.makeRequest<string>({
+      endpointType: 'datetime',
+      query,
+      contextId,
+    });
+
+    return data;
+  }
 }
