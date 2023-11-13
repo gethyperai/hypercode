@@ -1,3 +1,21 @@
+# [2.0.0](https://github.com/gethyperai/hypercode/compare/v1.1.1...v2.0.0) (2023-11-13)
+
+
+### Bug Fixes
+
+* **types:** pass `contextId` as options ([a0969c4](https://github.com/gethyperai/hypercode/commit/a0969c40250d98328178f4aabefb5b9ac572041f))
+
+
+### Features
+
+* **types:** add `Types` class ([ce41753](https://github.com/gethyperai/hypercode/commit/ce41753c5e18282e87a6bfc3666db3324c584199))
+* **types:** add more methods ([df85ed1](https://github.com/gethyperai/hypercode/commit/df85ed147a50278f3b74be51562d59a34480a3f5))
+
+
+### BREAKING CHANGES
+
+* **types:** New Hyper API and methods
+
 ## [1.1.1](https://github.com/gethyperai/hypercode/compare/v1.1.0...v1.1.1) (2023-11-10)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "hypercode",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "Hypercode is a friendly npm package that makes it easy to get live, structured LLM responses in your application.",
   "author": {
     "name": "Hyper AI",
