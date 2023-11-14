@@ -1,20 +1,5 @@
 import { Hyper } from '../hyper';
-
-type allowedTypes =
-  | 'string'
-  | 'integer'
-  | 'float'
-  | 'boolean'
-  | 'datetime'
-  | 'string_array'
-  | 'integer_array'
-  | 'float_array'
-  | 'boolean_array'
-  | 'datetime_array';
-
-type MethodParamsOptions = {
-  contextId: string;
-};
+import type { AllowedTypes, MethodParamsOptions } from './@types';
 
 export class Types {
   constructor(private readonly hyper: Hyper) {}
@@ -24,7 +9,7 @@ export class Types {
     query,
     contextId,
   }: {
-    endpointType: allowedTypes;
+    endpointType: AllowedTypes;
     query: string;
     contextId?: string;
   }): Promise<{
