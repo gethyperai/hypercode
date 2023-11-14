@@ -1,7 +1,12 @@
 import { enableFetchMocks } from 'jest-fetch-mock';
 import { Hyper } from '../index';
+import type { AllowedTypes } from './@types';
 
 enableFetchMocks();
+
+const baseUrl = process.env.HYPER_BASE_URL || 'https://api.gethyper.ai/v1';
+const endpoint = '/types';
+const fullEndpoint = (type: AllowedTypes) => `${baseUrl}${endpoint}/${type}`;
 
 const hyper = new Hyper('hyper_1234');
 
@@ -34,7 +39,7 @@ describe('Hypercode Types API methods', () => {
       expect(typeof result.data).toBe('string');
       expect(result.data).toBe('Elon Musk');
       expect(fetchMock).toHaveBeenLastCalledWith(
-        expect.any(String), // endpoint
+        fullEndpoint('string'), // endpoint
         // body and headers
         expect.objectContaining({
           body: expect.stringContaining(
@@ -69,7 +74,7 @@ describe('Hypercode Types API methods', () => {
         status: 200,
       });
 
-      const result = await hyper.types.string(
+      const result = await hyper.types.integer(
         'How many planets are in the Solar System?',
         { contextId },
       );
@@ -77,7 +82,7 @@ describe('Hypercode Types API methods', () => {
       expect(typeof result.data).toBe('number');
       expect(result.data).toBe(42);
       expect(fetchMock).toHaveBeenLastCalledWith(
-        expect.any(String), // endpoint
+        fullEndpoint('integer'), // endpoint
         // body and headers
         expect.objectContaining({
           body: expect.stringContaining(
@@ -123,7 +128,7 @@ describe('Hypercode Types API methods', () => {
       expect(typeof result.data).toBe('number');
       expect(result.data).toBe(fixedStatistic);
       expect(fetchMock).toHaveBeenLastCalledWith(
-        expect.any(String), // endpoint
+        fullEndpoint('float'), // endpoint
         // body and headers
         expect.objectContaining({
           body: expect.stringContaining(
@@ -163,7 +168,7 @@ describe('Hypercode Types API methods', () => {
       expect(typeof result.data).toBe('boolean');
       expect(result.data).toBe(true);
       expect(fetchMock).toHaveBeenLastCalledWith(
-        expect.any(String), // endpoint
+        fullEndpoint('boolean'), // endpoint
         // body and headers
         expect.objectContaining({
           body: expect.stringContaining(
@@ -210,7 +215,7 @@ describe('Hypercode Types API methods', () => {
       expect(new Date(data!)).toBeInstanceOf(Date);
       expect(new Date(data!).getFullYear()).toBe(1969);
       expect(fetchMock).toHaveBeenLastCalledWith(
-        expect.any(String), // endpoint
+        fullEndpoint('datetime'), // endpoint
         // body and headers
         expect.objectContaining({
           body: expect.stringContaining(
