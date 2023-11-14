@@ -3,6 +3,10 @@ import { Hyper } from '../index';
 
 enableFetchMocks();
 
+const baseUrl = process.env.HYPER_BASE_URL || 'https://api.gethyper.ai/v1';
+const endpoint = '/contexts';
+const fullEndpoint = `${baseUrl}${endpoint}`;
+
 const hyper = new Hyper('hyper_1234');
 
 describe('Hypercode contexts API methods', () => {
@@ -36,7 +40,7 @@ describe('Hypercode contexts API methods', () => {
 
       expect(result.data).toEqual(expectedResult);
       expect(fetchMock).toHaveBeenLastCalledWith(
-        expect.any(String), // endpoint
+        fullEndpoint, // endpoint
         // body and headers
         expect.any(Object),
       );
