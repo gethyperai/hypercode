@@ -1,3 +1,16 @@
+# [2.1.0](https://github.com/gethyperai/hypercode/compare/v2.0.0...v2.1.0) (2023-11-14)
+
+
+### Bug Fixes
+
+* **ts:** modify types for response ([6508862](https://github.com/gethyperai/hypercode/commit/65088628835c35dd58d5f489735c17fffacc4688))
+
+
+### Features
+
+* **contexts:** add `Contexts` class and methods ([73b7e7c](https://github.com/gethyperai/hypercode/commit/73b7e7cc6137943b4fd64ea9ee9e672ac714a935))
+* **search:** add `Search` class inside `Hyper` ([bc37dfc](https://github.com/gethyperai/hypercode/commit/bc37dfc74c342be3fd44af40aac5468c60f38d39))
+
 # [2.0.0](https://github.com/gethyperai/hypercode/compare/v1.1.1...v2.0.0) (2023-11-13)
 
 
