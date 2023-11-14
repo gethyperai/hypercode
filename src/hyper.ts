@@ -1,5 +1,6 @@
 import { Types } from './types';
 import { Search } from './search';
+import { Contexts } from './contexts';
 
 const baseUrl = process.env.HYPER_BASE_URL || 'https://api.gethyper.ai/v1';
 
@@ -14,6 +15,7 @@ export class Hyper {
 
   readonly types = new Types(this);
   readonly search = new Search(this);
+  readonly contexts = new Contexts(this);
 
   constructor(private readonly apiKey?: string) {
     if (!apiKey) {
