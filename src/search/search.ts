@@ -1,5 +1,5 @@
 import { Hyper } from '../hyper';
-import { MethodParamsOptions, SearchResultData } from './@types';
+import type { MethodParamsOptions, SearchResultData } from './@types';
 
 export class Search {
   constructor(private readonly hyper: Hyper) {}

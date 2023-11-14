@@ -36,12 +36,14 @@ export class Types {
       ? { query: query, context_id: contextId }
       : { content: query };
 
-    const res = await this.hyper.post<T>({
+    const res = await this.hyper.post<{ data: T }>({
       endpoint,
       body: payload,
     });
 
-    return res;
+    if (res.data?.data) return { data: res.data.data, error: null };
+
+    return { data: null, error: res.error };
   }
 
   async string(query: string, options?: MethodParamsOptions) {

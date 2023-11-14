@@ -1,4 +1,5 @@
 import { Types } from './types';
+import { Search } from './search';
 
 const baseUrl = process.env.HYPER_BASE_URL || 'https://api.gethyper.ai/v1';
 
@@ -12,6 +13,7 @@ export class Hyper {
   private readonly headers: Headers;
 
   readonly types = new Types(this);
+  readonly search = new Search(this);
 
   constructor(private readonly apiKey?: string) {
     if (!apiKey) {
@@ -36,7 +38,16 @@ export class Hyper {
   }: {
     endpoint: string;
     options?: RequestInit;
-  }): Promise<{ data: T | null; error: string | null }> {
+  }): Promise<
+    | {
+        data: T;
+        error: null;
+      }
+    | {
+        data: null;
+        error: string;
+      }
+  > {
     const res = await fetch(`${baseUrl}${endpoint}`, options);
 
     if (!res.ok) {
@@ -45,7 +56,7 @@ export class Hyper {
       return { data: null, error };
     }
 
-    const { data } = (await res.json()) as { data: T };
+    const data = (await res.json()) as T;
     return { data, error: null };
   }
 
