@@ -1,5 +1,14 @@
 export type AllContexts = {
-  created_at: string;
+  /**
+   * ID of the context
+   */
   id: string;
+  /**
+   * Timestamp of when the context was created
+   */
+  created_at: string;
+  /**
+   * Name of the context
+   */
   name: string;
 }[];
