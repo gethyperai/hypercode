@@ -12,10 +12,16 @@ export class Types {
     endpointType: AllowedTypes;
     query: string;
     contextId?: string;
-  }): Promise<{
-    data: T | null;
-    error: string | null;
-  }> {
+  }): Promise<
+    | {
+        data: T;
+        error: null;
+      }
+    | {
+        data: null;
+        error: string;
+      }
+  > {
     const endpoint = `/types/${endpointType}`;
     const payload = contextId
       ? { query: query, context_id: contextId }
@@ -26,7 +32,7 @@ export class Types {
       body: payload,
     });
 
-    if (res.data?.data) return { data: res.data.data, error: null };
+    if (res.data) return { data: res.data.data, error: null };
 
     return { data: null, error: res.error };
   }
