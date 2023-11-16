@@ -5,6 +5,15 @@ const config: JestConfigWithTsJest = {
   clearMocks: true,
   restoreMocks: true,
   verbose: true,
+  collectCoverage: true,
+  coverageThreshold: {
+    global: {
+      statements: 100,
+      branches: 100,
+      functions: 100,
+      lines: 100,
+    },
+  },
   testEnvironment: 'node',
   setupFiles: ['./jest.setup.ts'],
   prettierPath: '<rootDir>/node_modules/prettier',
