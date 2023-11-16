@@ -80,4 +80,54 @@ export class Types {
 
     return data;
   }
+
+  async stringArray(query: string, options?: MethodParamsOptions) {
+    const data = await this.makeRequest<string[]>({
+      endpointType: 'string_array',
+      query,
+      contextId: options?.contextId,
+    });
+
+    return data;
+  }
+
+  async integerArray(query: string, options?: MethodParamsOptions) {
+    const data = await this.makeRequest<number[]>({
+      endpointType: 'integer_array',
+      query,
+      contextId: options?.contextId,
+    });
+
+    return data;
+  }
+
+  async floatArray(query: string, options?: MethodParamsOptions) {
+    const data = await this.makeRequest<number[]>({
+      endpointType: 'float_array',
+      query,
+      contextId: options?.contextId,
+    });
+
+    return data;
+  }
+
+  async booleanArray(query: string, options?: MethodParamsOptions) {
+    const data = await this.makeRequest<boolean[]>({
+      endpointType: 'boolean_array',
+      query,
+      contextId: options?.contextId,
+    });
+
+    return data;
+  }
+
+  async datetimeArray(query: string, options?: MethodParamsOptions) {
+    const data = await this.makeRequest<string[]>({
+      endpointType: 'datetime_array',
+      query,
+      contextId: options?.contextId,
+    });
+
+    return data;
+  }
 }
