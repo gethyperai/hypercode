@@ -38,7 +38,7 @@ export class Types {
   }
 
   /**
-   *
+   * More information: https://docs.gethyper.ai/types#string
    * @param {string} query - The query to be processed
    * @param {MethodParamsOptions} options - Optional parameters to be passed to the request, such as `contextId`
    * @returns The result of the query as a string data type
@@ -60,7 +60,7 @@ export class Types {
   }
 
   /**
-   *
+   * More information: https://docs.gethyper.ai/types#integer
    * @param {string} query - The query to be processed
    * @param {MethodParamsOptions} options - Optional parameters to be passed to the request, such as `contextId`
    * @returns The result of the query as an integer data type
@@ -82,7 +82,7 @@ export class Types {
   }
 
   /**
-   *
+   * More information: https://docs.gethyper.ai/types#float
    * @param {string} query - The query to be processed
    * @param {MethodParamsOptions} options - Optional parameters to be passed to the request, such as `contextId`
    * @returns The result of the query as a float data type
@@ -104,7 +104,7 @@ export class Types {
   }
 
   /**
-   *
+   * More information: https://docs.gethyper.ai/types#boolean
    * @param {string} query - The query to be processed
    * @param {MethodParamsOptions} options - Optional parameters to be passed to the request, such as `contextId`
    * @returns The result of the query as a boolean data type
@@ -126,7 +126,7 @@ export class Types {
   }
 
   /**
-   *
+   * More information: https://docs.gethyper.ai/types#datetime
    * @param {string} query - The query to be processed
    * @param {MethodParamsOptions} options - Optional parameters to be passed to the request, such as `contextId`
    * @returns The result of the query as a datetime data type
@@ -148,7 +148,7 @@ export class Types {
   }
 
   /**
-   *
+   * More information: https://docs.gethyper.ai/types#string-array
    * @param {string} query - The query to be processed
    * @param {MethodParamsOptions} options - Optional parameters to be passed to the request, such as `contextId`
    * @returns The result of the query as a array of strings
@@ -170,7 +170,7 @@ export class Types {
   }
 
   /**
-   *
+   * More information: https://docs.gethyper.ai/types#integer-array
    * @param {string} query - The query to be processed
    * @param {MethodParamsOptions} options - Optional parameters to be passed to the request, such as `contextId`
    * @returns The result of the query as a array of integers
@@ -192,7 +192,7 @@ export class Types {
   }
 
   /**
-   *
+   * More information: https://docs.gethyper.ai/types#float-array
    * @param {string} query - The query to be processed
    * @param {MethodParamsOptions} options - Optional parameters to be passed to the request, such as `contextId`
    * @returns The result of the query as a array of floats
@@ -214,7 +214,7 @@ export class Types {
   }
 
   /**
-   *
+   * More information: https://docs.gethyper.ai/types#boolean-array
    * @param {string} query - The query to be processed
    * @param {MethodParamsOptions} options - Optional parameters to be passed to the request, such as `contextId`
    * @returns The result of the query as a array of booleans
@@ -236,7 +236,7 @@ export class Types {
   }
 
   /**
-   *
+   * More information: https://docs.gethyper.ai/types#datetime-array
    * @param {string} query - The query to be processed
    * @param {MethodParamsOptions} options - Optional parameters to be passed to the request, such as `contextId`
    * @returns The result of the query as a array of datetime strings
