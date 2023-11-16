@@ -13,6 +13,21 @@ const hyper = new Hyper('hyper_1234');
 describe('Hypercode Types API methods', () => {
   afterEach(() => fetchMock.resetMocks());
 
+  describe("makeRequest method's error handling", () => {
+    it('should return error if response is not ok', async () => {
+      fetchMock.mockOnce(JSON.stringify({ error: 'Not found' }), {
+        status: 404,
+      });
+
+      const result = await hyper['types']['makeRequest']({
+        endpointType: 'string',
+        query: 'Who is the CEO of SpaceX?',
+      });
+
+      expect(result).toEqual({ data: null, error: 'Not found' });
+    });
+  });
+
   describe('string method', () => {
     it('should return the correct string for an identification query', async () => {
       fetchMock.mockOnce(JSON.stringify({ data: 'Elon Musk' }), {
@@ -221,6 +236,266 @@ describe('Hypercode Types API methods', () => {
           body: expect.stringContaining(
             JSON.stringify({
               query: 'What is the date of the Apollo 11 moon landing?',
+              context_id: contextId,
+            }),
+          ),
+        }),
+      );
+    });
+  });
+
+  describe('stringArray method', () => {
+    const expectedResult = [
+      'Human Resources',
+      'Finance',
+      'Research and Development',
+      'Sales',
+      'Customer Support',
+    ];
+
+    it('should return the correct string array for a string array query', async () => {
+      fetchMock.mockOnce(JSON.stringify({ data: expectedResult }), {
+        status: 200,
+      });
+
+      const { data } = await hyper.types.stringArray(
+        'List all department names',
+      );
+
+      expect(typeof data).toBe('object');
+      expect(Array.isArray(data)).toBe(true);
+      expect(typeof data![0]).toBe('string');
+      expect(data).toEqual(expectedResult);
+    });
+
+    it('should return the correct string array for a string array query with contextId', async () => {
+      const contextId = '9a8b7c6d-5e4f-3a2b-1c0d-e9f8a7b6c5d4';
+
+      fetchMock.mockOnce(JSON.stringify({ data: expectedResult }), {
+        status: 200,
+      });
+
+      const { data } = await hyper.types.stringArray(
+        'List all department names',
+        { contextId },
+      );
+
+      expect(typeof data).toBe('object');
+      expect(Array.isArray(data)).toBe(true);
+      expect(typeof data![0]).toBe('string');
+      expect(data).toEqual(expectedResult);
+      expect(fetchMock).toHaveBeenLastCalledWith(
+        fullEndpoint('string_array'), // endpoint
+        // body and headers
+        expect.objectContaining({
+          body: expect.stringContaining(
+            JSON.stringify({
+              query: 'List all department names',
+              context_id: contextId,
+            }),
+          ),
+        }),
+      );
+    });
+  });
+
+  describe('integerArray method', () => {
+    const expectedResult = [25, 40, 15, 50, 30];
+
+    it('should return the correct integer array for a integer array query', async () => {
+      fetchMock.mockOnce(JSON.stringify({ data: expectedResult }), {
+        status: 200,
+      });
+
+      const { data } = await hyper.types.integerArray(
+        'What is the headcount for each department?',
+      );
+
+      expect(typeof data).toBe('object');
+      expect(Array.isArray(data)).toBe(true);
+      expect(typeof data![0]).toBe('number');
+      expect(data).toEqual(expectedResult);
+    });
+
+    it('should return the correct integer array for a integer array query with contextId', async () => {
+      const contextId = 'a1b2c3d4-e5f6-4g7h-8i9j-0k1l2m3n4o5p';
+
+      fetchMock.mockOnce(JSON.stringify({ data: expectedResult }), {
+        status: 200,
+      });
+
+      const { data } = await hyper.types.integerArray(
+        'What is the headcount for each department?',
+        { contextId },
+      );
+
+      expect(typeof data).toBe('object');
+      expect(Array.isArray(data)).toBe(true);
+      expect(typeof data![0]).toBe('number');
+      expect(data).toEqual(expectedResult);
+      expect(fetchMock).toHaveBeenLastCalledWith(
+        fullEndpoint('integer_array'), // endpoint
+        // body and headers
+        expect.objectContaining({
+          body: expect.stringContaining(
+            JSON.stringify({
+              query: 'What is the headcount for each department?',
+              context_id: contextId,
+            }),
+          ),
+        }),
+      );
+    });
+  });
+
+  describe('floatArray method', () => {
+    const expectedResult = [4.2, 3.8, 4.5, 4.7, 3.9];
+
+    it('should return the correct float array for a float array query', async () => {
+      fetchMock.mockOnce(JSON.stringify({ data: expectedResult }), {
+        status: 200,
+      });
+
+      const { data } = await hyper.types.floatArray(
+        'What were the customer satisfaction ratings from the last survey?',
+      );
+
+      expect(typeof data).toBe('object');
+      expect(Array.isArray(data)).toBe(true);
+      expect(typeof data![0]).toBe('number');
+      expect(data).toEqual(expectedResult);
+    });
+
+    it('should return the correct float array for a float array query with contextId', async () => {
+      const contextId = '0f9e8d7c-6b5a-4c3d-2e1f-0a9b8c7d6e5f';
+
+      fetchMock.mockOnce(JSON.stringify({ data: expectedResult }), {
+        status: 200,
+      });
+
+      const { data } = await hyper.types.floatArray(
+        'What were the customer satisfaction ratings from the last survey?',
+        { contextId },
+      );
+
+      expect(typeof data).toBe('object');
+      expect(Array.isArray(data)).toBe(true);
+      expect(typeof data![0]).toBe('number');
+      expect(data).toEqual(expectedResult);
+      expect(fetchMock).toHaveBeenLastCalledWith(
+        fullEndpoint('float_array'), // endpoint
+        // body and headers
+        expect.objectContaining({
+          body: expect.stringContaining(
+            JSON.stringify({
+              query:
+                'What were the customer satisfaction ratings from the last survey?',
+              context_id: contextId,
+            }),
+          ),
+        }),
+      );
+    });
+  });
+
+  describe('booleanArray method', () => {
+    const expectedResult = [true, false, true, true, false];
+
+    it('should return the correct boolean array for a boolean array query', async () => {
+      fetchMock.mockOnce(JSON.stringify({ data: expectedResult }), {
+        status: 200,
+      });
+
+      const { data } = await hyper.types.booleanArray(
+        'Are services meeting performance targets?',
+      );
+
+      expect(typeof data).toBe('object');
+      expect(Array.isArray(data)).toBe(true);
+      expect(typeof data![0]).toBe('boolean');
+      expect(data).toEqual(expectedResult);
+    });
+
+    it('should return the correct boolean array for a boolean array query with contextId', async () => {
+      const contextId = '5f6a7b8c-9d0e-1f2a-3b4c-5d6e7f8g9h0i';
+
+      fetchMock.mockOnce(JSON.stringify({ data: expectedResult }), {
+        status: 200,
+      });
+
+      const { data } = await hyper.types.booleanArray(
+        'Are services meeting performance targets?',
+        { contextId },
+      );
+
+      expect(typeof data).toBe('object');
+      expect(Array.isArray(data)).toBe(true);
+      expect(typeof data![0]).toBe('boolean');
+      expect(data).toEqual(expectedResult);
+      expect(fetchMock).toHaveBeenLastCalledWith(
+        fullEndpoint('boolean_array'), // endpoint
+        // body and headers
+        expect.objectContaining({
+          body: expect.stringContaining(
+            JSON.stringify({
+              query: 'Are services meeting performance targets?',
+              context_id: contextId,
+            }),
+          ),
+        }),
+      );
+    });
+  });
+
+  describe('datetimeArray method', () => {
+    const expectedResult = [
+      '2023-11-15T17:00:00Z',
+      '2023-12-01T17:00:00Z',
+      '2023-12-20T17:00:00Z',
+    ];
+
+    it('should return the correct datetime array for a datetime array query', async () => {
+      fetchMock.mockOnce(JSON.stringify({ data: expectedResult }), {
+        status: 200,
+      });
+
+      const { data } = await hyper.types.datetimeArray(
+        'What are the upcoming project deadlines?',
+      );
+
+      expect(typeof data).toBe('object');
+      expect(Array.isArray(data)).toBe(true);
+      expect(typeof data![0]).toBe('string');
+      expect(data).toEqual(expectedResult);
+      expect(new Date(data![0])).toBeInstanceOf(Date);
+      expect(new Date(data![0]).getFullYear()).toBe(2023);
+    });
+
+    it('should return the correct datetime array for a datetime array query with contextId', async () => {
+      const contextId = '12345678-90ab-cdef-g123-456789abcdef';
+
+      fetchMock.mockOnce(JSON.stringify({ data: expectedResult }), {
+        status: 200,
+      });
+
+      const { data } = await hyper.types.datetimeArray(
+        'What are the upcoming project deadlines?',
+        { contextId },
+      );
+
+      expect(typeof data).toBe('object');
+      expect(Array.isArray(data)).toBe(true);
+      expect(typeof data![0]).toBe('string');
+      expect(data).toEqual(expectedResult);
+      expect(new Date(data![0])).toBeInstanceOf(Date);
+      expect(new Date(data![0]).getFullYear()).toBe(2023);
+      expect(fetchMock).toHaveBeenLastCalledWith(
+        fullEndpoint('datetime_array'), // endpoint
+        // body and headers
+        expect.objectContaining({
+          body: expect.stringContaining(
+            JSON.stringify({
+              query: 'What are the upcoming project deadlines?',
               context_id: contextId,
             }),
           ),
