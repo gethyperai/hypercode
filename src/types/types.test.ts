@@ -70,7 +70,7 @@ describe('Hypercode Types API methods', () => {
 
   describe('integer method', () => {
     it('should return correct integer for a count query', async () => {
-      fetchMock.mockOnce(JSON.stringify({ data: 42 }), {
+      fetchMock.mockOnce(JSON.stringify({ data: 8 }), {
         status: 200,
       });
 
@@ -79,13 +79,13 @@ describe('Hypercode Types API methods', () => {
       );
 
       expect(typeof result.data).toBe('number');
-      expect(result.data).toBe(42);
+      expect(result.data).toBe(8);
     });
 
     it('should return correct integer for a count query with contextId', async () => {
       const contextId = 'context-456';
 
-      fetchMock.mockOnce(JSON.stringify({ data: 42 }), {
+      fetchMock.mockOnce(JSON.stringify({ data: 8 }), {
         status: 200,
       });
 
@@ -95,7 +95,7 @@ describe('Hypercode Types API methods', () => {
       );
 
       expect(typeof result.data).toBe('number');
-      expect(result.data).toBe(42);
+      expect(result.data).toBe(8);
       expect(fetchMock).toHaveBeenLastCalledWith(
         fullEndpoint('integer'), // endpoint
         // body and headers
