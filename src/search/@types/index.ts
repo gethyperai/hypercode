@@ -1,4 +1,7 @@
 export type MethodParamsOptions = {
+  /**
+   * The context ID to be used for the request, you can get all context IDs by calling `hyper.contexts.list()` and then using the `id` field from the response.
+   */
   contextId: string;
 };
 
@@ -37,7 +40,16 @@ type MetaDataType =
     };
 
 export type SearchResultData = {
+  /**
+   * The content of the document
+   */
   page_content: string;
+  /**
+   * The type of the document
+   */
   type: 'Document';
+  /**
+   * Metadata about the document
+   */
   metadata: MetaDataType;
 };
