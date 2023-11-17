@@ -11,7 +11,7 @@ Find the npm package [here](https://www.npmjs.com/package/hypercode)
 **There are 3 main components to Hypercode:**
 
 - Context Management (get information about the created contexts, more methods are coming soon) - [Learn More](#context-management)
-- Response Formatting (get response in a specific format or data type) - [Learn More](#response-formatting---types-in-hypercode)
+- Response Formatting (get a response in a specific format or data type) - [Learn More](#response-formatting---types-in-hypercode)
 - Embeddings Search (perform nuanced searches across integrated third-party data sources and internal documents) - [Learn More](#embeddings-search)
 
 **Here's a quick example of how you can use Hypercode to get a boolean response:**
@@ -22,7 +22,7 @@ const { data: isEarthFlat } = await hyper.types.boolean('Is the earth flat?');
 console.log(isEarthFlat); // false
 ```
 
-You can also pass information along with your queries in the form of `context`. Context represents bundles of live data with relevance to the query, ensuring the LLM is given all the information necessary to produce an accurate response. You can build context objects in the [Hyper app](https://app.gethyper.ai), then use them in Hypercode:
+You can also pass the information along with your queries in the form of `context`. Context represents bundles of live data with relevance to the query, ensuring the LLM is given all the information necessary to produce an accurate response. You can build context objects in the [Hyper app](https://app.gethyper.ai), then use them in Hypercode:
 
 ```javascript
 const { data: productLaunchDate } = await hyper.types.datetime(
@@ -77,25 +77,25 @@ Start by installing the Hypercode package through your preferred package manager
 #### Using npm
 
 ```bash
-npm i neoenv
+npm i hypercode
 ```
 
 or
 
 ```bash
-npm install --save neoenv
+npm install --save hypercode
 ```
 
 #### Using Yarn
 
 ```bash
-yarn add neoenv
+yarn add hypercode
 ```
 
 #### Using pnpm
 
 ```bash
-pnpm add neoenv
+pnpm add hypercode
 ```
 
 ### Step 2: Set your Hyper API Key
