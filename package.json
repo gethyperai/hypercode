@@ -1,14 +1,23 @@
 {
   "name": "hypercode",
   "version": "2.2.0",
-  "description": "Hypercode is a friendly npm package that makes it easy to get live, structured LLM responses in your application.",
+  "description": "Hypercode is a npm package for Node.js that allows you to consume the Hyper APIs easily in your JavaScript or TypeScript projects with complete type-safety",
   "author": {
     "name": "Hyper AI",
     "email": "hello@gethyper.ai",
     "url": "https://gethyper.ai"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gethyperai/hypercode.git"
+  },
+  "bugs": {
+    "email": "support@gethyper.ai",
+    "url": "https://github.com/gethyperai/hypercode/issues"
+  },
+  "homepage": "https://github.com/gethyperai/hypercode#readme",
+  "readme": "https://github.com/gethyperai/hypercode#readme",
   "license": "MIT",
-  "homepage": "https://gethyper.ai",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
