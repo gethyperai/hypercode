@@ -16,6 +16,8 @@ const config: JestConfigWithTsJest = {
   },
   testEnvironment: 'node',
   setupFiles: ['./jest.setup.ts'],
+  testPathIgnorePatterns: ['<rootDir>/examples/'],
+  modulePathIgnorePatterns: ['<rootDir>/examples/'],
   prettierPath: '<rootDir>/node_modules/prettier',
 };
 
