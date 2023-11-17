@@ -1,0 +1,27 @@
+{
+  "name": "with-js-esm",
+  "version": "1.0.0",
+  "description": "Example of using Hypercode npm package with Node.js and JavaScript in ESM format",
+  "author": {
+    "name": "Hyper AI",
+    "email": "hello@gethyper.ai",
+    "url": "https://gethyper.ai"
+  },
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "hypercode": "^2.2.0"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "large language model",
+    "developer",
+    "tool",
+    "convenience"
+  ]
+}
