@@ -1,0 +1,30 @@
+{
+  "name": "with-ts",
+  "version": "1.0.0",
+  "description": "Example of using Hypercode npm package with Node.js and TypeScript",
+  "author": {
+    "name": "Hyper AI",
+    "email": "hello@gethyper.ai",
+    "url": "https://gethyper.ai"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "hypercode": "^2.2.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "large language model",
+    "developer",
+    "tool",
+    "convenience"
+  ]
+}
