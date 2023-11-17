@@ -1,8 +1,8 @@
 # Hypercode
 
-`Hypercode` is a npm package for Node.js that allows you to consume the [Hyper APIs](https://docs.gethyper.ai) easily in your JavaScript or TypeScript projects with complete **type-safety**. `Hypercode` handles the complexity of context management and response formatting, allowing you to focus on creating dynamic and intelligent features that enhance user experience. It is a friendly npm package that makes it easy to get live, structured LLM responses with custom contexts in useful formats like integers, booleans, strings, dates, and lots more.
+`Hypercode` is a npm package for Node.js that allows you to consume the [Hyper APIs](https://docs.gethyper.ai) easily in your JavaScript or TypeScript projects with complete **type-safety**. `Hypercode` handles the complexity of context management and response formatting, allowing you to focus on creating dynamic and intelligent features that enhance the user experience. It is a friendly npm package that makes it easy to get live, structured LLM responses with custom contexts in useful formats like integers, booleans, strings, dates, and lots more.
 
-Create a free account today on [Hyper](https://app.gethyper.ai) to start building your own custom contexts, integrating them into your applications, generate API Keys, and use them in your projects with `Hypercode`!
+Create a free account today on [Hyper](https://app.gethyper.ai) to start building your own custom contexts, integrating them into your applications, generating API keys, and using them in your projects with `Hypercode`!
 
 Find the npm package [here](https://www.npmjs.com/package/hypercode)
 
@@ -10,7 +10,7 @@ Find the npm package [here](https://www.npmjs.com/package/hypercode)
 
 **There are 3 main components to Hypercode:**
 
-- Context Management (get information about the created contexts, more methods coming soon) - [Learn More](#context-management)
+- Context Management (get information about the created contexts, more methods are coming soon) - [Learn More](#context-management)
 - Response Formatting (get response in a specific format or data type) - [Learn More](#response-formatting---types-in-hypercode)
 - Embeddings Search (perform nuanced searches across integrated third-party data sources and internal documents) - [Learn More](#embeddings-search)
 
@@ -22,7 +22,7 @@ const { data: isEarthFlat } = await hyper.types.boolean('Is the earth flat?');
 console.log(isEarthFlat); // false
 ```
 
-You can also pass information along with your queries in the form of `context`. Context represents bundles of live data with relevance to the query, ensuring the LLM his given all the information necessary to product an accurate response. You can build context objects in the [Hyper app](https://app.gethyper.ai), then use them in Hypercode:
+You can also pass information along with your queries in the form of `context`. Context represents bundles of live data with relevance to the query, ensuring the LLM is given all the information necessary to produce an accurate response. You can build context objects in the [Hyper app](https://app.gethyper.ai), then use them in Hypercode:
 
 ```javascript
 const { data: productLaunchDate } = await hyper.types.datetime(
@@ -37,7 +37,7 @@ console.log(productLaunchDate); // "2024-07-31T0:00:00Z"
 
 > **_NOTE:_** A context object is a collection of resources made up of files, web pages, and data from integrations like Google Drive, Slack, and GitHub. When you link a resource to a Context in Hyper, we generate embeddings that stay automatically synced with changes to your data.
 
-The combination of structure and context in Hypercode is a powerful tool for adding sophisticated natural language understanding into your apps. Instead of complex setups, you can simply write async code that directly leverages AI insights for real-time decision-making and content creation:
+The combination of structure and context in Hypercode is a powerful tool for adding sophisticated natural language understanding to your apps. Instead of complex setups, you can simply write async code that directly leverages AI insights for real-time decision-making and content creation:
 
 ```javascript
 async function prepareEmailCampaign() {
@@ -110,7 +110,7 @@ HYPER_API_KEY="your_api_key_here"
 
 Make sure to replace `your_api_key_here` with your actual Hyper API key obtained from the Hyper app.
 
-### Step 3: Import Hypercode in Your Project
+### Step 3: Import Hypercode into Your Project
 
 Import Hypercode in your JavaScript or TypeScript file to start using it:
 
@@ -127,11 +127,11 @@ const hyper = new Hyper(process.env.HYPER_API_KEY);
 
 ### Step 4: Start Querying
 
-Now you're ready to start querying language models with your own created custom contexts with Hypercode!
+Now you're ready to start querying language models with your own custom contexts created with Hypercode!
 
 ## Examples
 
-**You can find diferent example code in the [examples](https://github.com/gethyperai/hypercode/tree/main/examples) folder.**
+**You can find different example codes in the [examples](https://github.com/gethyperai/hypercode/tree/main/examples) folder.**
 
 ## Context Management
 
@@ -254,7 +254,7 @@ console.log(data);
 
 ## Wrapping Up
 
-With Hypercode, integrating live, structured responses in specific `types` from language models into your application has never been easier. By handling the complexity of managing the `contexts` and response formatting, Hypercode empowers you to focus on creating dynamic and intelligent features that enhance user experience. With the powerful `search` feature, developers can perform nuanced search across integrated third-party data sources and internal documents to get the most relevant results from the context.
+With Hypercode, integrating live, structured responses in specific `types` from language models into your application has never been easier. By handling the complexity of managing the `contexts` and response formatting, Hypercode empowers you to focus on creating dynamic and intelligent features that enhance the user experience. With the powerful `search` feature, developers can perform nuanced searchs across integrated third-party data sources and internal documents to get the most relevant results from the context.
 
 Remember, the examples provided are just a starting point. The potential uses of Hypercode are limited only by your imagination and the needs of your application. Whether you're building smart assistants, data analysis tools, content generators, or any other AI-driven application, Hypercode is designed to streamline your workflow and bring the power of LLMs to your fingertips.
 
