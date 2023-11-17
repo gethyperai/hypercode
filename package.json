@@ -1,6 +1,6 @@
 {
   "name": "hypercode",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Hypercode is a npm package for Node.js that allows you to consume the Hyper APIs easily in your JavaScript or TypeScript projects with complete type-safety",
   "author": {
     "name": "Hyper AI",
