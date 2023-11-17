@@ -1,3 +1,19 @@
+# [2.2.0](https://github.com/gethyperai/hypercode/compare/v2.1.0...v2.2.0) (2023-11-17)
+
+
+### Bug Fixes
+
+* **types:** make ts-types more stronger for `Types` ([ee605df](https://github.com/gethyperai/hypercode/commit/ee605df8d9e28831bbe8119d9be66c3715ae2e05))
+
+
+### Features
+
+* **jsdoc:** add JSDoc comments for `Contexts` ([d4f0d3d](https://github.com/gethyperai/hypercode/commit/d4f0d3d810f5fdb8e50e202aab01d08617b78c2b))
+* **jsdoc:** add JSDoc comments for `Hyper` ([d81feb4](https://github.com/gethyperai/hypercode/commit/d81feb48f8e300124ab87d1d6c49dddf21a24460))
+* **jsdoc:** add JSDoc comments for `Search` ([606268c](https://github.com/gethyperai/hypercode/commit/606268c1907df1862f129c33f3a563d755f66129))
+* **jsodc:** add JSDoc comments for `Types` ([1155bc8](https://github.com/gethyperai/hypercode/commit/1155bc8308cc1092d5d241ee15eada4f26dfc55c))
+* **types:** add new methods for `Types` ([dc6a0c4](https://github.com/gethyperai/hypercode/commit/dc6a0c4ee4b9ab8494ddb9d17bb9efd3c9fa1c77))
+
 # [2.1.0](https://github.com/gethyperai/hypercode/compare/v2.0.0...v2.1.0) (2023-11-14)
 
 
