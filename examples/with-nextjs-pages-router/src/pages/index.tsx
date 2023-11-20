@@ -2,14 +2,14 @@ import Head from 'next/head';
 import { useState, type FormEvent } from 'react';
 
 const Home = () => {
-  const [query, setQuery] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [result, setResult] = useState<string>('');
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    setQuery('');
+    const query = new FormData(e.currentTarget).get('query');
+    e.currentTarget.reset();
 
     try {
       const res = await fetch('/api/hyper', {
@@ -44,7 +44,7 @@ const Home = () => {
 
           <p className="mt-4 text-lg">
             Type a query in the search bar and press enter to get result of
-            "string" type
+            &quot;string&quot; type
           </p>
 
           <form onSubmit={handleSubmit}>
@@ -59,8 +59,6 @@ const Home = () => {
                 id="query"
                 name="query"
                 className="ring-2 ring-gray-600 border-gray-600 rounded-md px-2 py-1"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
               />
 
               <button
