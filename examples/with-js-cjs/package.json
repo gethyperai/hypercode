@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "dotenv": "^16.3.1",
-    "hypercode": "^2.2.0"
+    "hypercode": "^2.2.2"
   },
   "keywords": [
     "ai",
