@@ -1,5 +1,5 @@
 {
-  "name": "with-ts",
+  "name": "with-node-ts",
   "version": "1.0.0",
   "description": "Example of using Hypercode npm package with Node.js and TypeScript",
   "author": {
