@@ -1,3 +1,11 @@
+## [2.2.3](https://github.com/gethyperai/hypercode/compare/v2.2.2...v2.2.3) (2023-12-07)
+
+
+### Bug Fixes
+
+* **contexts:** replace `hyper.contexts.list` with `hyper.contexts.all` ([7b76910](https://github.com/gethyperai/hypercode/commit/7b769108bab8a5b6f4b3d3ee21fa539803aef106))
+* **search:** metadata type for search result ([14fced7](https://github.com/gethyperai/hypercode/commit/14fced79ebb544df73d1e53aeaa40273acfdf991))
+
 ## [2.2.2](https://github.com/gethyperai/hypercode/compare/v2.2.1...v2.2.2) (2023-11-17)
 
 ## [2.2.1](https://github.com/gethyperai/hypercode/compare/v2.2.0...v2.2.1) (2023-11-17)
