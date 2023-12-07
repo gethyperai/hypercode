@@ -29,12 +29,42 @@ type MetaDataType =
       source: string;
     }
   | {
+      type: 'sitemap';
+      name: string;
+      source: string;
+    }
+  | {
       type: 'text-snippet';
       name: string;
       source: string;
     }
   | {
       type: 'Slack Message';
+      name: string;
+      source: string;
+    }
+  | {
+      type: 'confluence';
+      name: string;
+      part: number;
+      source: string;
+      status: string;
+      page_id: string;
+    }
+  | {
+      type: 'jira';
+      id: string;
+      name: string;
+      labels: string;
+      source: string;
+      epic_key: string;
+      created_at: string;
+      updated_at: string;
+      epic_summary: string;
+      epic_description: string;
+    }
+  | {
+      type: 'Jira Issue';
       name: string;
       source: string;
     };
