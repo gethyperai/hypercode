@@ -44,7 +44,7 @@ export class Hyper {
   /**
    * Hyper Contexts API. Context groups in the Hyper app serve as collections of data aggregated from files, web URLs, and third-party integrations. They play a crucial role in refining search results and tailoring the contextual data provided to large language models. More information: https://docs.gethyper.ai/context
    * @example
-   * const { data, error } = await hyper.contexts.list();
+   * const { data, error } = await hyper.contexts.all();
    */
   readonly contexts = new Contexts(this);
 

@@ -36,7 +36,7 @@ describe('Hypercode contexts API methods', () => {
         status: 200,
       });
 
-      const result = await hyper.contexts.list();
+      const result = await hyper.contexts.all();
 
       expect(result.data).toEqual(expectedResult);
       expect(fetchMock).toHaveBeenLastCalledWith(

@@ -12,7 +12,7 @@ export type AllowedTypes =
 
 export type MethodParamsOptions = {
   /**
-   * The context ID to be used for the request, you can get all context IDs by calling `hyper.contexts.list()` and then using the `id` field from the response.
+   * The context ID to be used for the request, you can get all context IDs by calling `hyper.contexts.all()` and then using the `id` field from the response.
    */
   contextId: string;
 };

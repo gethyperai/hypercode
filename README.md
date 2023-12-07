@@ -137,10 +137,10 @@ Now you're ready to start querying language models with your own custom contexts
 
 Hypercode allows you to programmatically manage your contexts that are created inside the [Hyper App](https://app.gethyper.ai). You can get information about the created contexts, and more methods are coming soon. More information about contexts can be found [here](https://docs.gethyper.ai/context).
 
-**Here's a quick example of how you can use Hypercode to list down all the contexts:**
+**Here's a quick example of how you can use Hypercode to get all the contexts:**
 
 ```javascript
-const { data: contexts, error } = await hyper.contexts.list();
+const { data: contexts, error } = await hyper.contexts.all();
 
 console.log(contexts); // [{ id: 'context-id-1', name: 'Context 1', created_at: '2023-10-28T04:28:13.971776+00:00' }, { id: 'context-id-2', name: 'Context 2', created_at: '2023-11-02T22:18:44.978052+00:00' }]
 ```
