@@ -1,8 +1,8 @@
 # Hypercode
 
-`Hypercode` is a npm package for Node.js that allows you to consume the [Hyper APIs](https://docs.gethyper.ai) easily in your JavaScript or TypeScript projects with complete **type-safety**. `Hypercode` handles the complexity of context management and response formatting, allowing you to focus on creating dynamic and intelligent features that enhance the user experience. It is a friendly npm package that makes it easy to get live, structured LLM responses with custom contexts in useful formats like integers, booleans, strings, dates, and lots more.
+`Hypercode` is a npm package for Node.js that allows you to consume the [Hyper APIs](https://docs.gethyper.ai) easily in your JavaScript or TypeScript projects with complete **type-safety**. `Hypercode` handles the complexity of context management and response formatting, allowing you to focus on creating dynamic and intelligent features that enhance the user experience. It is a friendly npm package that makes it easy to get live, structured LLM responses with custom contexts in useful formats like integers, booleans, strings, and more.
 
-Create a free account today on [Hyper](https://app.gethyper.ai) to start building your own custom contexts, integrating them into your applications, generating API keys, and using them in your projects with `Hypercode`!
+Create a free account today on [Hyper](https://app.gethyper.ai) to start building your own custom contexts, integrating them into your applications, generating API keys, and using them in your projects with `Hypercode`.
 
 Find the npm package [here](https://www.npmjs.com/package/hypercode)
 
@@ -25,14 +25,14 @@ console.log(isEarthFlat); // false
 You can also pass the information along with your queries in the form of `context`. Context represents bundles of live data with relevance to the query, ensuring the LLM is given all the information necessary to produce an accurate response. You can build context objects in the [Hyper app](https://app.gethyper.ai), then use them in Hypercode:
 
 ```javascript
-const { data: productLaunchDate } = await hyper.types.datetime(
+const { data: productLaunch } = await hyper.types.string(
   'When is the product launch?',
   {
     contextId: 'product-roadmap-context-id',
   },
 );
 
-console.log(productLaunchDate); // "2024-07-31T0:00:00Z"
+console.log(productLaunch); // "The product launch is on December 11, 2023"
 ```
 
 > **_NOTE:_** A context object is a collection of resources made up of files, web pages, and data from integrations like Google Drive, Slack, and GitHub. When you link a resource to a Context in Hyper, we generate embeddings that stay automatically synced with changes to your data.
@@ -193,19 +193,9 @@ You can pass the `contextId` as an optional parameter to all the `types` methods
   console.log(canCatsSeeInTheDark); // true
   ```
 
-- **datetime**: Get a date and time as the answer.
-
-  ```javascript
-  const { data: moonLandingDate, error } = await hyper.types.datetime(
-    'What is the date of the Apollo 11 moon landing?',
-  );
-
-  console.log(moonLandingDate); // "1969-07-20T20:17:00Z"
-  ```
-
 **You can also get the result as an array of the above types. Here are the methods for that:**
 
-- `stringArray`, `integerArray`, `floatArray`, `booleanArray`, `datetimeArray` methods: Get an array of the respective type as the answer.
+- `stringArray`, `integerArray`, `floatArray`, `booleanArray` methods: Get an array of the respective type as the answer.
 
   ```javascript
   // Get an array of strings as the answer
@@ -231,12 +221,6 @@ You can pass the `contextId` as an optional parameter to all the `types` methods
   const { data } = await hyper.types.booleanArray(
     'Are services meeting performance targets?',
     { contextId: 'performance-reviews-context-id' },
-  );
-
-  // Get an array of datetimes as the answer
-  const { data } = await hyper.types.datetimeArray(
-    'What are the upcoming project deadlines?',
-    { contextId: 'project-management-context-id' },
   );
   ```
 
